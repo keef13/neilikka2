@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8">
+  <title>Neilikka</title>
+    <link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script>
+	/* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+} 
+	</script>
+  </head>
+
+<body>
+<img src="neilikka.jpg" id="logo">
+ <div class="topnav" id="myTopnav">
+  <a href="index.html">Etusivu</a>
+  <div class="dropdown">
+    <button class="dropbtn"><a href="tuotteet.html">Tuotteet</a>
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="sisakasvit.html">Sisäkasvit</a>
+      <a href="ulkokasvit.html">Ulkokasvit</a>
+      <a href="tyokalut.html">Työkalut</a>
+	  <a href="kasvien_hoito.html">Kasvien hoito</a>
+    </div>
+  </div>
+  <a href="myymalat.html">Myymälät</a>
+  
+  <a href="tietoa_meista.html">Tietoa meistä</a>
+  <a href="ota_yhteytta.html">Ota yhteyttä</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+</div> 
+<div class="center">
+<h1>Sisäkasvit</h1>
+<div class="rivi">
+<div class="tuotteet">
+<h2>Kookospalmu</h2>
+<img src="kookospalmu.jpg" width="300px">
+<p>29.99</p>
+<p>Tyylikäs, eksoottinen palmu, jonka suuret, pitkät lehdet kasvavat suoraan kookospähkinästä. Viihtyy valoisassa paikassa, muttei suorassa auringonpaisteessa. Multa saisi olla hieman kosteaa, muttei märkää. Lehtiä kannattaa suihkutella. </p>
+</div>
+<div class="tuotteet">
+<h2>Pallotuija Danica 15-20 cm</h2>
+<img src="sisa2.jpg" width="300px">
+<p>6.50</p>
+<p>Pallotuija 'Danica' on kestävä, tiivis- ja matalakasvuinen lajike. Versot ovat kesällä raikkaanvihreät ja muuttuvat talvella hieman rusehtaviksi. Nuoret lehdet ovat neulasmaisia ja vanhemmat suomuisia ja pehmeitä. Melko hidaskasvuinen, kaunismuotoinen pallotuija sopii hyvin pieneen pihaan, kasviryhmiin tai yksin istutettavaksi.</p>
+<p>Pallotuija viihtyy nuorena mieluummin varjoisella tai puolivarjoisella kasvupaikalla. Vanhemmiten taimi kestää aurinkoa paremmin. Kevätauringolta suojaaminen on suositeltavaa. Parhaiten pallotuija viihtyy tuoreessa, keskiravinteisessa ja happamassa hiekkamultamaassa. Tuijat sietävät hyvin leikkaamista. </p>
+</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8">
+  <title>Neilikka</title>
+    <link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script>
+	/* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+} 
+	</script>
+  </head>
+
+<body>
+ <img src="neilikka.jpg" id="logo">
+ <div class="topnav" id="myTopnav">
+  <a href="index.html">Etusivu</a>
+  <div class="dropdown">
+    <button class="dropbtn"><a href="tuotteet.html">Tuotteet</a>
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="sisakasvit.html">Sisäkasvit</a>
+      <a href="ulkokasvit.html">Ulkokasvit</a>
+      <a href="tyokalut.html">Työkalut</a>
+	  <a href="kasvien_hoito.html">Kasvien hoito</a>
+    </div>
+  </div>
+  <a href="myymalat.html">Myymälät</a>
+  
+  <a href="tietoa_meista.html">Tietoa meistä</a>
+  <a href="ota_yhteytta.html">Ota yhteyttä</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+</div> 
+<div class="center">
+<h1>Etusivu</h1>
+<p>Tervetuloa Puutarhaliike Neilikan kotisivuille! Meiltä löydät sekä sisä- että ulkokasvit ja kaiken tarvitsemasi kasvien hoitoon.</p>
+
+<h2>Uutisia</h2>
+<p class="uutisia">
+2.1.2016 Hyvää uutta vuotta! Uuden vuoden kunniaksi myymälöissämme upeita tarjouksia.</p>
+<p class="uutisia">
+14.12.2015 Joulukukat edullisesti meiltä. Myymälöissämme myös kattava ja edullinen valikoima joulukuusia.</p>
+
+<p class="uutisia">1.9.2015 Nyt on hyvä aika aloittaa puutarhan valmistelu talven lepokautta varten. Meiltä löydät kaikki työkalut ja tarvikkeet.</p><br>
+<!--<div id="display:block; margin-left:auto; margin-right:auto;">-->
+<img src="etusivu.jpg" style="display:block; margin-left:auto; margin-right:auto; width:40%;">
+<!--</div>-->
+</div>
+</body>
+</html>

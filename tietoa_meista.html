@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8">
+  <title>Neilikka</title>
+    <link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script>
+	/* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+} 
+
+
+// Get the container element
+var btnContainer = document.getElementById("myTopnav");
+
+// Get all buttons with class="btn" inside the container
+var btns = btnContainer.getElementsByClassName("linkki");
+
+// Loop through the buttons and add the active class to the current/clicked button
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+} 
+	</script>
+  </head>
+
+<body>
+ <img src="neilikka.jpg" id="logo">
+ <div class="topnav" id="myTopnav">
+  <a href="index.html" class="linkki">Etusivu</a>
+  <div class="dropdown">
+    <button class="dropbtn"><a href="tuotteet.html" class="linkki">Tuotteet</a>
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="sisakasvit.html">Sisäkasvit</a>
+      <a href="ulkokasvit.html">Ulkokasvit</a>
+      <a href="tyokalut.html">Työkalut</a>
+	  <a href="kasvien_hoito.html">Kasvien hoito</a>
+    </div>
+  </div>
+  <a href="myymalat.html" class="linkki">Myymälät</a>
+  
+  <a href="tietoa_meista.html" class="linkki">Tietoa meistä</a>
+  <a href="ota_yhteytta.html" class="linkki">Ota yhteyttä</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+</div> 
+<div class="center">
+<h1>Tietoa meistä</h1>
+<p>Puutarhaliike Neilikka on vuonna 1990 perustettu puutarhanhoitoon ja huonekasveihin erikoistunut myymäläketju. Ensimmäinen myymälämme perustettiin Helsingin Fabianinkadulle, ja toukokuussa 1997 perustimme ketjun toisen myymälän Espooseen.
+</p>
+<p>
+Meiltä löydät kattavan valikoiman sisä- ja ulkokasveja sekä tietysti kaikki työkalut ja muut tarvikkeet niiden hoitoon. Osaava ja puutarhanhoidosta innostunut henkilökuntamme on aina valmiina auttamaan sinua valitsemaan juuri sinulle sopivimmat tuotteet.
+</p>
+
+</div>
+</body>
+</html>
