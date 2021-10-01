@@ -17,7 +17,73 @@ function myFunction() {
     x.className += " responsive";
   } else {
     x.className = "topnav";
+  }include('debuggeri.php');  
+include('debuggeri.php');
+require 'Exception.php';
+require 'PHPMailer.php';
+require 'SMTP.php';
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+$to = "jukka.aula@omnia.fi";
+
+function posti($emailTo,$msg,$subject){
+include('../../tunnukset.php');   
+$emailFrom = "omniakurssi@email.com";
+$emailFromName = "Ohjelmointikurssi";
+$emailToName = "";
+$mail = new PHPMailer;
+$mail->isSMTP(); 
+$mail->CharSet = 'UTF-8';
+$mail->SMTPDebug = 0; // 0 = off (for production use) - 1 = client messages - 2 = client and server messages
+$mail->Host = "smtp.gmail.com"; // use $mail->Host = gethostbyname('smtp.gmail.com'); // if your network does not support SMTP over IPv6
+$mail->Port = 587; // TLS only
+$mail->SMTPSecure = 'tls'; // ssl is depracated
+$mail->SMTPAuth = true;
+$mail->Username = $smtpUsername;
+$mail->Password = $smtpPassword;
+$mail->setFrom($emailFrom, $emailFromName);
+$mail->addAddress($emailTo, $emailToName);
+$mail->Subject = $subject;
+$mail->msgHTML($msg); //$mail->msgHTML(file_get_contents('contents.html'), __DIR__); //Read an HTML message body from an external file, convert referenced images to embedded,
+$mail->AltBody = 'HTML messaging not supported';
+// $mail->addAttachment('images/phpmailer_mini.png'); //Attach an image file
+if(!@$mail->send()){
+    $tulos = false;
+    debuggeri("Mailer Error: " . $mail->ErrorInfo);
+}else{
+    $tulos = true;
+    debuggeri("Message sent!");
+}
+return $tulos;
+}
+
+//$tulos = posti($to,"Testiä","Testausta lisää.");
+//echo "Tulos: $tulos";
+//exit;
+
+function palaute($ajax,$message){
+if ($ajax){
+@@ -29,7 +72,7 @@ function palaute($ajax,$message){
+foreach ($kentat AS $kentta) {
+  if (empty($_POST[$kentta]) and $kentta <> 'special_features') 
+	$error_required[$kentta] = true;
+  if (in_array($kentta,$numeeriset) and !is_numeric(str_replace(",",".",$_POST[$kentta])))
+  if (in_array($kentta,$numeeriset) and (!is_numeric(str_replace(",",".",$_POST[$kentta])) or $_POST[$kentta] < 0)) 
+	$error_numeric[$kentta] = true;
+  }	
+
+@@ -118,6 +161,9 @@ function palaute($ajax,$message){
   }
+else {
+  debuggeri(basename(__FILE__).",$query");
+  $title = isset($_POST['title']) ? trim($_POST['title']) : "";
+  $msg = "Elokuva $title on lisätty tietokontaan.";
+  posti($to,$msg,"Elokuva lisätty tietokantaan.");
+  palaute($ajax,"Elokuvan tiedot on tallennettu.");
+  }
+if (!$ajax){
 } 
 	</script>
   </head>
@@ -25,6 +91,7 @@ function myFunction() {
 <body>
  <img src="neilikka.jpg" id="logo">
  <div class="topnav" id="myTopnav">
+   <div id="testi">
   <a href="index.html">Etusivu</a>
   <div class="dropdown">
     <button class="dropbtn"><a href="tuotteet.html">Tuotteet</a>
@@ -42,6 +109,7 @@ function myFunction() {
   <a href="tietoa_meista.html">Tietoa meistä</a>
   <a href="ota_yhteytta.html">Ota yhteyttä</a>
   <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+</div>
 </div> 
 <div class="center">
 <h1>Etusivu</h1>
