@@ -9,6 +9,13 @@
 		 background-size: cover;
  */}
  
+#testi{
+
+  float:right;
+  /*width:100%;*/
+
+}
+
  .center {
   margin-left: auto;
   margin-right: auto;
@@ -32,12 +39,14 @@ img#logo {
 	padding: 10px;
 	border: 5px double #000;
 	margin:0px;
+  border-radius: 5px;
 }
 
 div.myymalat{
 	padding: 10px;
 	border: 5px double #000;	
 	margin-bottom:10px;
+  border-radius: 5px;
 }
 	
 .tuotteet{
